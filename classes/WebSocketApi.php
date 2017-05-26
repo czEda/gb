@@ -3,7 +3,7 @@
 class WebSocketApi {
 
     private $password = "d$0awd6$5ZVawdIhlawdZJr8xwadtRFnSlbRX2.$2a$0awd6$5ZVIhawdlZJwdr8xtRFnS72lbRX2.Dsylt5.YSi1BzzqawdBt3rsBawdxYQMYIqsFe",
-    $ip = "localhost/2017/30_gb",
+    $ip = "localhost",
     $port = 4000;
 
     public function sendSocket($channel, $data) {
