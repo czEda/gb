@@ -16,5 +16,17 @@
 </head>
 <body>
 <h1>Realtime Kniha návštěv</h1>
+<div class="messages"></div>
+<script type="application/javascript">
+
+    var Sockets = io.connect('localhost:4000');
+
+    Sockets.on('Test', function(data) {
+
+        $('.messages').append("<span>" + data.name + ": " + data.message + "</span><br/>");
+
+    });
+
+</script>
 </body>
 </html>
