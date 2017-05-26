@@ -2,11 +2,122 @@
     padding: 0 0 0 0;
     margin: 0 0 0 0;
     box-sizing: border-box;
+    outline: none;
 }
-
 body {
-    background-color: #f0f0f0;
-    color: #000;
+    background-color: #f5f5f5;
+    color: black;
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+section.wrapper {
+    width: 840px;
+    margin: 60px auto;
+}
+section.wrapper div.background {
+    background-color: white;
+    border-radius: 2px;
+    float: left;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+section.wrapper h1 {
+    font-family: Roboto;
+    width: 100%;
+    float: left;
+    height: 200px;
+    line-height: 250px;
+    text-align: center;
+    font-size: 60px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    color: white;
+    background-color: #4aa3df;
+}
+section.wrapper article {
+    padding: 20px 20px 20px 20px;
+    float: left;
+    width: 100%;
+}
+
+label.label {
+    width: 100%;
+    float: left;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+    border-radius: 2px;
+    float: left;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 10px;
+    transition: border-color .2s;
+}
+.input:focus {
+    border-color:  #0b97c4;
+}
+
+.hide {
+    display: none;
+}
+
+textarea.input {
+    max-width: 100%;
+    min-height: 60px;
+    max-height: 120px;
+}
+
+button.button {
+    background-color: #0b97c4;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    float: right;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: box-shadow .5s, background-color .5s;
+}
+button.button:hover {
+    background-color: #0bb9e7;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.clear {
+    clear: both;
+}
+
+.messages {
+    width: 100%;
+    float: left;
+}
+
+.message {
+    width: 100%;
+    border-bottom: 1px solid #DDDDDD;
+    float: left;
+    margin-bottom: 25px;
+}
+.message:last-child {
+    margin-bottom: 0;
+}
+.message > .message-name {
+    font-family: Roboto;
+    font-weight: 600;
+}
+.message > .message-text {
+    padding-top: 5px;
+    word-break: break-all;
+    padding-bottom: 10px;
+}
+.message > .message-date {
+    float: right;
+}
+.message > .message-email {
+    float: left;
 }

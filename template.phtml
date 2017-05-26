@@ -9,24 +9,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realtime Kniha návštěv</title>
     <base href="localhost">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" charset="UTF-8"></script>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js" charset="UTF-8"></script>
 </head>
 <body>
-<h1>Realtime Kniha návštěv</h1>
-<div class="messages"></div>
-<script type="application/javascript">
+<section class="wrapper">
+    <div class="background">
+        <h1>Realtime Kniha návštěv</h1>
+        <article class="form">
+            <form method="post" id="form">
+                <label class="label" for="form-name">Vaše jméno</label>
+                <input class="input" type="text" id="form-name" name="form_name" placeholder="Vaše jméno (Patrik Smělý)">
 
-    var Sockets = io.connect('localhost:4000');
+                <label class="label" for="form-email">Váš email</label>
+                <input class="input" type="email" name="form_email" id="form-email" placeholder="Vaš email (email@email.com)">
 
-    Sockets.on('Test', function(data) {
+                <label class="label" for="form-text">Vaše zpráva</label>
+                <textarea class="input" name="form_text" id="form-text" placeholder="Váše zpráva"></textarea>
 
-        $('.messages').append("<span>" + data.name + ": " + data.message + "</span><br/>");
-
-    });
-
-</script>
+                <button type="submit" class="button" id="form-action" name="forn_action">Odeslat <i class="fa fa-arrow-circle-right"></i></button>
+            </form>
+        </article>
+        <article class="messages">
+            <?php foreach($messages as $message): ?>
+                <div class="message">
+                    <h2 class="message-name"><?= $message['name'] ?></h2>
+                    <div class="message-text">
+                        <?= $message['text'] ?>
+                    </div>
+                    <div class="message-email"><?= $message['email'] ?></div>
+                    <div class="message-date"><?= date("d. m. Y H:i", $message['date']) ?></div>
+                </div>
+            <?php endforeach; ?>
+        </article>
+    </div>
+    <div class="clear"></div>
+</section>
+<script src="js/index.js" type="application/javascript"></script>
 </body>
 </html>
